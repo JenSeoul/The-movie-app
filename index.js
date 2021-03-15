@@ -30,8 +30,5 @@ app.get('/result/:search', async (req,res)=>{
     res.json(data.results)
     
 })
-
-
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, ()=> console.log('Now server is running'))
