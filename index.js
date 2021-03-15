@@ -7,7 +7,7 @@ app.use('/', express.static('public'));
 app.use(express.json({limit:'1mb'}));
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', async (req,res)=>{
+app.get('/movie', async (req,res)=>{
 
     const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`;
 
@@ -31,6 +31,6 @@ app.get('/result/:search', async (req,res)=>{
 })
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, ()=> console.log('Now server is running'))

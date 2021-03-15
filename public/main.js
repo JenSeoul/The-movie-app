@@ -1,6 +1,6 @@
 
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280/';
-const api = '/';
+const api = 'movie/';
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const main = document.querySelector('#main');
