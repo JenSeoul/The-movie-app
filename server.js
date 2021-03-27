@@ -9,18 +9,13 @@ app.use(express.json({limit:'1mb'}));
 app.use(express.urlencoded({extended: true}));
 
 app.get('/movie', async (req,res)=>{
-   try{ const api_key= process.env.api_key
+    const api_key= process.env.api_key
     const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${api_key}&page=1`;
 
     const response = await fetch(API_URL);
     const data = await response.json();
 
     res.json(data.results)
-      }
-   catch(err){
-    console.err(error)
-    res.json({err.message})
-   }
 
 })
 
